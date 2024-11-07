@@ -1,0 +1,706 @@
+@font-face {
+  font-family: doran;
+  src: url(Doran-Regular.ttf);
+}
+
+@font-face {
+  font-family: doran-bold;
+  src: url(Doran-Bold.ttf);
+}
+
+
+
+
+
+
+.blonOuterContainer{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  inset: 0;
+  margin: auto;
+}
+
+.BlobInnerContainer{
+  border-radius: 50%;
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  transform: scale(0.6);
+
+
+}
+
+.blob{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  inset: 0;
+  margin: auto;
+  background: conic-gradient(#1b153d
+  ,#050655
+  ,#363538
+  ,#270a42);
+  animation: BlobSpiner 5s  linear infinite;
+}
+
+
+.glass-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(30px);
+  pointer-events:none ;
+}
+
+@keyframes BlobSpiner {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+body {
+  background-color: #000000;
+  font-family: doran;
+  background-size: cover;
+  transition: backdrop-filter 0.3s ease;
+  overscroll-behavior: none;
+
+
+}
+
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-section {
+  width: 80%;
+  height: Auto;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  z-index: 100000;
+}
+
+.header-cont {
+  justify-content: space-between;
+  width: 90%;
+  height: 80px;
+  margin-top: 10px;
+}
+
+.image-logo {
+  width: 100px;
+}
+
+.ContactUs {
+  width: 100px;
+  height: 40px;
+  border-radius: 0.4rem;
+  background: -webkit-linear-gradient(20deg, #969696, #3f3f3f);
+  color: white;
+  font-size: large;
+}
+
+
+.content-section {
+  width: 100%;
+  flex-direction: column;
+}
+
+.content-section h1,
+.content-section h2 {
+  font-family: doran-bold;
+  color: white;
+  text-align: center;
+  background: -webkit-linear-gradient(90deg, #f0f0f0, #cacaca);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+
+
+.content-section h1 {
+  font-size: 85px;
+}
+
+.content-section p {
+  color: white;
+  font-size: 20px;
+  direction: rtl;
+  text-align: center;
+  width: 80%;
+  margin-bottom: 30px;
+}
+
+.benefits-cont {
+  width: auto;
+  color: white;
+  margin-top: 3rem;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(5, 150px);
+  grid-template-rows: repeat(5, 150px);
+  margin-top: 1rem;
+  gap: 15px;
+}
+.gridContainer .item {
+  border-radius: 0.6rem;
+  border: 1px rgb(85, 85, 85) solid;
+  position: relative;
+  overflow: hidden;
+  background-color: #141414;
+}
+
+.gridContainer .item::before {
+  width: 300px;
+  height: 300px;
+  top: var(--y);
+  left: var(--x);
+  transform: translate(-50%, -50%);
+  transition: 0.2s, top 0s, left 0s;
+  content: "";
+  position: absolute;
+  background: radial-gradient(#31313179, transparent, transparent);
+  opacity: 0;
+}
+
+.gridContainer .item:hover::before {
+  opacity: 1;
+}
+
+.item:hover {
+  border: 1.5px rgb(88, 88, 88) solid;
+}
+
+.item {
+  padding: 5px;
+}
+
+.item1 img {
+  width: 250px;
+}
+
+.item3 img {
+  width: 150px;
+}
+
+
+.item1{
+  grid-area: 1/1/4/3;
+}
+
+.item4{
+  grid-area: 4/1/6/4;
+}
+
+.item3{
+  grid-area: 1/3/3/6;
+}
+
+.item2{
+  grid-area: 3/4/6/6;
+}
+
+.item5{
+  grid-area: 3/3/4/4;
+}
+
+.item-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.item-content h2 {
+  font-family: doran-bold;
+  color: white;
+  margin-top: 5px;
+}
+
+.item-content p {
+  font-size: 13px;
+  margin-top: 10px;
+  color: rgb(161, 161, 161);
+  margin-right: 10px;
+  margin-left: 10px;
+  width: 90%;
+}
+
+.itemimg {
+  width: 220px;
+}
+
+.benefits-h2 {
+  font-family: doran-bold;
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 10px;
+  z-index: 100;
+}
+
+
+
+.benefits-h2::before{
+  content: "✦";
+    margin: 3px;
+}
+
+.benefits-h2::after{
+  margin: 3px;
+  content: "✦";
+  
+}
+
+
+.overlay {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+}
+
+.MainImageCont {
+  width: 500px;
+}
+
+.ImageDiscover {
+  width: 600px;
+}
+
+.GoalsContainer {
+  margin-top: 6rem;
+  width: 100vw;
+}
+
+.GoalTitle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  position: absolute;
+}
+
+.card {
+  width: 150px;
+  height: 200px;
+  margin: 20px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  z-index: 1; /* به جلو آوردن کارت */
+}
+
+.body-blur:hover {
+  backdrop-filter: blur(10px);
+}
+
+.CardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.GoalsContainer h2 {
+  z-index: 8;
+}
+
+
+
+.GoalsCard {
+  position: relative;
+  z-index: -8;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.GoalsCard span {
+  position: absolute;
+  top: 0;
+  width: 200px;
+  height: 200px;
+  display: block;
+  background-color: #30303069;
+  border-radius: 50%;
+  transform-origin: 150px 0;
+  transform: rotate(calc(90deg * var(--i)));
+  filter: blur(80px);
+  opacity: 0.75;
+  z-index: -2;
+}
+
+.circles {
+  width: 100vw;
+}
+
+.GoalsCard span:nth-child(1) {
+  background-color: #121e2e;
+}
+.GoalsCard span:nth-child(2) {
+  background-color: #202020;
+}
+.GoalsCard span:nth-child(3) {
+  background-color: #121e2e;
+}
+.GoalsCard span:nth-child(4) {
+  background-color: #141618;
+}
+
+.Goalstitle img {
+    width: 400px;
+}
+
+.Goals {
+ z-index: 7;
+ width: 100%;
+ align-items: c;
+}
+
+.Goalstitle{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Goal-h1{
+  color: white;
+  font-family: doran-bold;
+  font-size: 30px;
+  position: relative;
+}
+
+.Goal-h1::before{
+  content: '';
+  width: 200px;
+  height: 2px;
+  background-color: #cacaca;
+  position: absolute;
+  top: 50%;
+  left: 101%;
+}
+
+.Goal-h1::after{
+  content: '';
+  width: 200px;
+  height: 2px;
+  background-color: #cacaca;
+  position: absolute;
+  top: 50%;
+  right: 101%;
+}
+
+.goalContainer{
+  width: 50%;
+  padding: 20px 50px;
+  flex-direction: column;
+}
+
+.GoalTimeline{
+  min-width: 90%;
+  height: auto;
+  margin-top: 20px;
+}
+
+.texts{
+  color: white;
+  background-color: rgba(66, 66, 66, 0.541);
+  border: 2px rgba(255, 255, 255, 0.486) solid ; 
+  width: 500px;
+  min-height: 250px;
+  border-radius: 1rem;
+  flex-direction: column;
+  justify-content: space-evenly;
+  position: relative;
+  z-index: 9;
+}
+.texts p{
+  margin-top: 10px;
+  font-size: 15px;
+  text-align: right;
+  width: 95%;
+}
+
+.texts h5{
+  font-size: 25px;
+  font-family: doran-bold;
+  width: 90%;
+  margin-top: 10px;
+  height: max-content;
+  display: flex;
+}
+
+
+.H5TitleContainer{
+  color: white;
+  width: 100%;
+  margin-right: 30px;
+  display:flex ;
+  align-items: center;
+}
+
+.texts:hover{
+  transform: scale(5);
+}
+
+.GoalsImage img{
+  width: 350px;
+}
+
+.GoalsImage{
+  width: 100%;
+
+}
+
+
+
+.checkpoint:nth-child(odd){
+  border-left: 1px solid white;
+  padding-left: 3em;
+  transform: translateX(50%);
+}
+
+.checkpoint:nth-child(even){
+  border-right: 1px solid white;
+  padding-right: 3em;
+  transform: translateX(-49.8%);
+}
+
+.checkpoint:nth-child(odd)::before,
+.checkpoint:nth-child(even)::before{
+  content: '';
+  width: 3em;
+  height: 1px;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  transform: translatex(100%);
+}
+
+.checkpoint:nth-child(odd)::before{
+  transform: translatex(-1050%);
+}
+
+.texts:hover {
+  border: 3px solid;
+}
+
+
+.checkpoint:nth-child(odd){
+  border-left: 1px solid white;
+  padding-left: 3em;
+  transform: translateX(50%);
+}
+
+.checkpoint:nth-child(even){
+  border-right: 1px solid white;
+  padding-right: 3em;
+  transform: translateX(-49.8%);
+}
+
+
+.card:hover {
+  transform: scale(1.5);
+}
+
+
+
+
+
+.StepsContainer{
+  display: flex;
+  width: fit-content;
+  margin-top: 40px;
+  flex-direction: column;
+
+}
+
+
+.StepsContainer h2{
+  z-index: 100;
+}
+
+.stepItemContainer{
+  display: grid;
+  grid-template-columns: repeat(4, 300px);
+  grid-template-rows: repeat(1,150px);
+  column-gap: 20px;
+}
+
+.step{
+  background-color: #1f1f1f9f;
+  border-radius: 1rem;
+  border: 2px solid rgb(39, 39, 39);
+  box-shadow: rgba(27, 27, 27, 0.63) 2px 2px 2px ;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  height: auto ;
+  margin-top: 20px;
+}
+
+.step h3{
+  color: rgb(145, 145, 145);
+  font-size: 15px;
+  margin: 10px;
+  width: 95%;
+}
+
+.step h1{
+  font-size: 22px;
+  text-align: center;
+  width: 90%;
+}
+
+.step img{
+  width: 20px;
+}
+
+.stepDescreption{
+  width: 80%;
+  height: auto;
+  background-color:#1b1b1b8a ;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 1rem;
+  display: none;
+  justify-content:center;
+  line-height: 30px;
+  word-spacing: 2px;
+  font-size: 18px;
+ 
+}
+
+.stepTitle{
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin-right: 10px;
+}
+
+.StepDescriptioTitle{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+   margin: 30px;
+}
+
+.SDT-h4{
+  color: rgb(211, 211, 211);
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.SDT-h4::before{
+  content: "●";
+  margin-left: 5px;
+}
+
+
+.SDT-p{
+  font-size: 16px;
+  color: white  ;
+  margin-bottom: 10px;
+}
+
+
+
+.descSpan{
+  color: white;
+  line-height: 30px;
+}
+
+
+.FiveyearsGoals{
+   width: 100%;
+   margin-top: 100px;
+   font-size: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  margin-bottom: 100px;
+}
+
+.FiveyearsGoals h6{
+  font-size: 15px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+
+.FiveyearGoal{
+  width: 50%;
+  min-height: 45px;
+  background-color: #52525252;
+  border-radius: 1rem;
+  border: 1px rgb(44, 44, 44) solid;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+
+}
+
+.FiveYearGoalSpan{
+  font-size: 20px;
+  color: white;
+  margin-right: 10px;
+}
+
+.FiveYearGoalSpan::before{
+  content: "✔";
+  margin-left: 10px;
+}
+
+footer{
+  width: 100%;
+  height: 50vh;
+}
